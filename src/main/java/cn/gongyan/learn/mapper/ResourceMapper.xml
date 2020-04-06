@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gongyan.learn.mapper.ResourceMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="cn.gongyan.learn.beans.entity.Resource">
+                    <id column="res_id" property="resId"/>
+                    <result column="res_avatar" property="resAvatar"/>
+                    <result column="res_creator_id" property="resCreatorId"/>
+                    <result column="res_description" property="resDescription"/>
+                    <result column="res_name" property="resName"/>
+                    <result column="res_seq" property="resSeq"/>
+                    <result column="res_theme_id" property="resThemeId"/>
+                    <result column="res_type" property="resType"/>
+                    <result column="res_upload_date" property="resUploadDate"/>
+                    <result column="res_url" property="resUrl"/>
+        </resultMap>
+
+
+        <!-- 通用查询结果列 -->
+        <sql id="Base_Column_List">
+            res_id, res_avatar, res_creator_id, res_description, res_name, res_seq, res_theme_id, res_type, res_upload_date, res_url
+        </sql>
+    <select id="findOneResouce" resultType="cn.gongyan.learn.beans.entity.Resource">
+        select * from resource r where r.res_id=#{id}
+    </select>
+
+</mapper>
